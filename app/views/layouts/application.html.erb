@@ -12,9 +12,14 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+    <% if signed_in? %>
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <% else %>
+      <%= render 'layouts/messages' %>
+       <%= yield %>
+    <% end %>
   </body>
 </html>
