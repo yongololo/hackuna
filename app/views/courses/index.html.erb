@@ -1,0 +1,37 @@
+
+
+<h1 class="page-header bigger">Vos formations</h1>
+
+<% @courses.each do |course| %>
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">
+        <% if course.name.include? "acheteur" %>
+        <%= image_tag("law.png", size: "50x50") %>
+        <% elsif course.name.include? "eekend" %>
+        <%= image_tag("webdev.png", size: "50x50") %>
+        <% elsif course.name.include? "vendeur" %>
+          <%= image_tag("law.png", size: "50x50") %>
+        <% end %>
+      </div>
+      <div class="col-md-10">
+        <h1 class="biggy"><span class="hkncolor" ><%= link_to course.name, course%></span>
+        <br><small><%= course.description %></small></h1>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-9">
+        <p class="lead"></p>
+      </div>
+      <div class='col-md-3'>
+      <%= link_to "voir le cours", course, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <% end %>
+

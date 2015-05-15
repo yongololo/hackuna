@@ -30,6 +30,12 @@
         <%= f.label :current_password %>
         <%= f.password_field :current_password, class: 'form-control' %>
       </div>
+      <div class="checkbox">
+          <%= f.check_box :as_start %>      
+        </div>
+        <div class="checkbox">
+          <%= f.check_box :as_pro %>      
+        </div>
     </fieldset>
     <%= f.submit 'Update', :class => 'button right' %>
   <% end %>

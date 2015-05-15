@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Hackuna" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Hackuna" %>">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <%= render 'layouts/navigation_pro' %>
+    </header>
+    <% if signed_in? %>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+    <% else %>
+      <%= render 'layouts/messages' %>
+       <%= yield %>
+    <% end %>
+  </body>
+
+  <footer>
+    <%= render 'layouts/footer' %>
+  </footer>
+</html>

@@ -18,6 +18,9 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
+    <div class="checkbox">
+          <%= f.hidden_field :as_start, :checked => true %>     
+        </div>
      <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
 </div>

@@ -1,0 +1,7 @@
+<% if current_user.as_pro %>
+good
+<% elsif current_user.as_start %>
+bien !
+<% end %>
+
+<%= current_user.first_name %>
