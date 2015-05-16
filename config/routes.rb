@@ -1,4 +1,7 @@
 Hackuna::Application.routes.draw do
+  
+  resources :subscriptions
+
   resources :my_feedbacks
 
   resources :courses

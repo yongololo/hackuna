@@ -1,8 +1,8 @@
 
 
 <h1 class="page-header bigger">Vos formations</h1>
-
-<% @courses.each do |course| %>
+<% if current_user.courses.any? %>
+<% current_user.courses.each do |course| %>
 <div class="panel panel-primary">
   <div class="panel-body">
     <div class="row">
@@ -32,6 +32,19 @@
     </div>
   </div>
 </div>
+<% end %>
+
+<% else %>
+<br>
+<h3 class="text-center">Vous n'avez pas encore souscrit à une formation <span class="hackunafont">Hackuna</span>
+<br>
+  <small>Vous souhaitez nous adresser une demande précise ? 
+    <br>Cliquez-ci dessous :</small>
+  <br>
+  <br><%= link_to "Demande spécifique", "mailto:contact@hackuna.org", class: "btn btn-primary btn-lg" %>
+</h3>
+
+</h3>
 
  <% end %>
 
