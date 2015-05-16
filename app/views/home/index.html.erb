@@ -1,7 +1,19 @@
 
 <div class="homebg">
+	<div class="row">
+		<div class="homecatchbig"><b>Générez des revenus</b>
 			
-		<div class="signup_form col-md-3 col-md-offset-8">
+		</div>
+		<div class="col-md-8">
+	<div class="homecatch">
+	
+		En lançant un produit web
+			<br>
+		<br><b>Sans capital.
+		<br>En un weekend.</b></div>
+</div>
+			
+		<div class="signup_form col-md-3">
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
 
 		    <div class="form-group">
@@ -16,11 +28,11 @@
 		     
 		      <%= f.password_field :password_confirmation, :placeholder => "password", class: 'form-control input-lg' %>
 		    </div>
-		    <div class="form-group">
+		    <div class="form-group invisible">
 		          <%= f.check_box :as_start, :checked => true %> Je suis entrepreneur     
 		        </div>
 		     <%= f.submit 'Inscription', :class => 'btn btn-primary btn-lg btn-block' %>
 		  <% end %>
 		</div>
-		
+		</div>
 </div>
