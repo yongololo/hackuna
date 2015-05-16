@@ -15,4 +15,5 @@ Hackuna::Application.routes.draw do
   root :to => "home#index"
   get "pro" => "home#pro"
   get "welcome" => "home#welcome"
+  get "bye" => "home#bye"
 end

@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   has_many :courses, 	:through => :subscriptions,
   						:dependent => :destroy
 
+  def pro_user
+  	user.as_pro
+  end
 end

@@ -2,13 +2,16 @@
 
 <p>
   <strong>User:</strong>
-  <%= @subscription.user_id %>
+  <%= @subscription.user.email %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @subscription.course_id %>
+  <%= @subscription.course.name %>
 </p>
+
+Positive feedback : <%= @subscription.positive_feedback %>
+<br>Negative feedback : <%= @subscription.negative_feedback %>
 
 <%= link_to 'Edit', edit_subscription_path(@subscription) %> |
 <%= link_to 'Back', subscriptions_path %>

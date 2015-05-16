@@ -28,7 +28,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
+        format.html { redirect_to :back, notice: 'Subscription was successfully created.' }
         format.json { render action: 'show', status: :created, location: @subscription }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class SubscriptionsController < ApplicationController
   def update
     respond_to do |format|
       if @subscription.update(subscription_params)
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Merci !' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +69,6 @@ class SubscriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscription_params
-      params.require(:subscription).permit(:user_id, :course_id)
+      params.require(:subscription).permit(:user_id, :course_id, :positive_feedback, :negative_feedback)
     end
 end

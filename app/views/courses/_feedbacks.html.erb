@@ -1,45 +1,70 @@
-<% if @course.my_feedbacks.any? %>
-	<% @course.my_feedbacks.each do |feedback| %>
+<% @course.subscriptions.each do |subscription| %>
 
-	<% if feedback.user_id == current_user.id %>
-		<h3 class="text-center">Merci pour votre feedback !
-			<br><small>Quelque chose vous a échappé ? Vous pouvez toujours le modifier.</small>
-		</h3>
-		<hr>
-		<i class="fa fa-quote-left fa-3x pull-left fa-border"></i>
-		<p class="lead"><i><%= feedback.content %></i></p>
-		<%= link_to "Modifier", edit_my_feedback_path(feedback), class: "pull-right btn btn-default" %>
-		
+<% if subscription.user_id == current_user.id && subscription.course_id == @course.id %>
+
+	<% unless subscription.positive_feedback.blank? %>
+		<h4 class="text-center"><small>Merci pour votre feedback !
+			<!-- <br>Quelque chose vous a échappé ? Vous pouvez toujours le modifier. -->
+			</small>
+		</h4>
+		<i class="fa fa-thumbs-up fa-2x pull-left fa-border hkncolor"></i>
+		<p class="lead"><i>
+			<%= subscription.positive_feedback %></i></p>
 	<% else %>
-		<%= simple_form_for(@my_feedback) do |f| %>
+		<%= simple_form_for(subscription) do |f| %>
 		  <%= f.error_notification %>
 
 		  <div class="form-group">
-		    <h3>Qu'avez-vous préféré, et qu'avez vous moins apprécié, de cette formation ?</h3>
+		  	<h3>Qu'avez-vous particulièrement apprécié ?
+		  		<br><small>Votre feedback nous encourage à perséverer. Merci déjà !</small>
+		  	</h3>
+		    <%= f.hidden_field :user_id, :value => subscription.user_id %>
 		    <%= f.hidden_field :course_id, :value => @course.id %>
-		    <%= f.text_area :content, class: "form-control input-lg" %>
+		    <%= f.text_area :positive_feedback, class: "form-control input-lg" %>
+		    
 		  </div>
 
-		  <div class="text-center">
-		    <%= f.button :submit, "Enregistrer mon feedback", class: "btn btn-info btn-lg" %>
+		  <div class="form-actions text-center">
+		    <%= f.button :submit, "Enregistrer mon feedback", class: "btn btn-primary" %>
 		  </div>
-		<% end %>
 		<% end %>
 	<% end %>
-<% else %>
-	<%= simple_form_for(@my_feedback) do |f| %>
-	  <%= f.error_notification %>
 
-	  <div class="form-group">
-	    <h3 class="text-center">Qu'avez-vous apprécié ? Qu'avez vous moins apprécié ?
-	    	<br><small>Votre feedback permettra l'amélioration constante de nos services. Merci déjà !</small></h3>
-	    	<hr>
-	    <%= f.hidden_field :course_id, :value => @course.id %>
-	    <%= f.text_area :content, class: "form-control input-lg" %>
-	  </div>
+	<% unless subscription.negative_feedback.blank? %>
+		
+		<i class="fa fa-thumbs-down fa-2x pull-left fa-border hkncolor"></i>
+		<p class="lead"><i>
+			<%= subscription.negative_feedback %></i></p>
+	<% else %>
+		<%= simple_form_for(subscription) do |f| %>
+		  <%= f.error_notification %>
 
-	  <div class="text-center">
-	    <%= f.button :submit, "Enregistrer mon feedback", class: "btn btn-info btn-lg" %>
-	  </div>
+		  <div class="form-group">
+		  	<h3>Qu'avez-vous moins apprécié ?
+		  		<br><small>Votre feedback permettra l'amélioration constante de nos services. Merci déjà !</small>
+		  	</h3>
+		    <%= f.hidden_field :user_id, :value => subscription.user_id %>
+		    <%= f.hidden_field :course_id, :value => @course.id %>
+		    <%= f.text_area :negative_feedback, class: "form-control input-lg" %>
+		    
+		  </div>
+
+		  <div class="form-actions text-center">
+		    <%= f.button :submit, "Enregistrer mon feedback", class: "btn btn-primary" %>
+		  </div>
+		<% end %>
 	<% end %>
 <% end %>
+
+<% end %>
+
+
+
+
+<hr>
+
+
+
+
+
+
