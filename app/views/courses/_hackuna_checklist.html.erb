@@ -1,0 +1,213 @@
+<h3 class="page-header">
+	Environnement de développement
+</h3>
+
+<div class="row">
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Installer son environnement</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Ruby on rails</h4>
+
+				<p class="list-group-item-text">WIN : http://railsinstaller.org</p>
+				<p class="list-group-item-text">MAC : http://gorails.com</p>
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Postgresql / pgAdmin</h4>
+				<p class="list-group-item-text">Pour que tourne la base de données de votre application</p>
+				<br>
+				<p class="list-group-item-text">http://postgresql.org</p>
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Github</h4>
+				<p class="list-group-item-text">pour gérer (et sécuriser) les versions successives de votre travail</p>
+				<br>
+				<p class="list-group-item-text">http://github.com</p>
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Sublime Text</h4>
+				<p class="list-group-item-text">Pour éditer le code</p>
+				<br>
+				<p class="list-group-item-text">http://sublimetext.com</p>
+			</li>
+
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Terminal / Command Line Tool</h4>
+				<p class="list-group-item-text">Pour éditer exécuter les commandes</p>
+				<br>
+				<p class="list-group-item-text">Déjà présent dans votre ordinateur : cmd.exe (windows) ou Terminal (mac)</p>
+			</li>
+
+		</ul>
+	</div>
+
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">S'apprêter à développer</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Dans Terminal / CMD.exe
+					<br>
+				</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+					Etre dans le bon dossier : C:\Sites</li>
+					<li class="list-group-item">Ou remonter de dossier : cd ..</li>
+					<li class="list-group-item">Puis aller vers le sous-dossier pertinent : cd nomdusousdossier (ou "nomdusousdossier" est le nom de votre application)</li>
+				</ul>
+			</li>
+
+
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Dans Sublime Text
+					<br>
+				</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+			Fichier -> Ouvrir "dossier"</li>
+			<li class="list-group-item">Ouvrir le dossier de votre app (vous devriez voir des sous-dossiers "app" "bin" "config" "db"... à gauche dans sublimetext)</li>
+			<li class="list-group-item">Puis aller vers le sous-dossier pertinent : cd nomdusousdossier (ou "nomdusousdossier" est le nom de votre application)</li>
+		</ul>
+			</li>
+			
+
+
+			
+		</ul>
+	</div>
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Voir et tester son application</li>
+			<li class="list-group-item">
+				Ouvrir le terminal / cmd.exe
+			</li>
+			<li class="list-group-item">
+				S'assurer d'être dans le bon dossier (de l'application)
+			</li>
+			<li class="list-group-item">
+				Vérifier que la base de données est à jour : "rake db:migrate"
+			</li>
+			<li class="list-group-item">
+				Lancer le serveur local : "rails server"
+			</li>
+
+			<li class="list-group-item">
+				Ouvrir Google Chrome
+			</li>
+
+			<li class="list-group-item">
+				Aller sur le port de l'application locale : "http://localhost:3000"
+			</li>
+
+			<li class="list-group-item">
+				Pour fermer le serveur, exécutez (dans le terminal) : appuyer sur CTRL et sur C
+			</li>
+
+			<li class="list-group-item">
+				<small><b>NB : pour tester l’app avec des users</b>, il suffit d’en créer en local, en enregistrant plusieur profils différents. Ils seront toujours les mêmes (login et mot de passe) car ils sont stockés dans la base de données “de développement” de l’app</small>
+			</li>
+		</ul>
+	</div>
+
+
+
+
+
+
+</div>
+
+
+
+<h3 class="page-header">
+	Développer la structure de son application
+</h3>
+
+<div class="row">
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Créer l'application</li>
+			<li class="list-group-item">Ouvrez votre terminal</li>
+<li class="list-group-item">Assurez-vous d’être dans c:\Sites</li>
+<li class="list-group-item">Exécutez la formule suivante : "rails new <i>nomdevotreapp</i>"</li>
+<li class="list-group-item">Allez dans le dossier de votre app : "cd <i>nomdevotreapp</i>"</li>
+		</ul>
+	</div>
+
+	
+
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Ajouter des ressources</li>
+			<li class="list-group-item">Ouvrez votre terminal</li>
+<li class="list-group-item">Assurez-vous d’être dans c:\Sites:\nomdevotreapp</li>
+<li class="list-group-item">ajoutez la ressource à votre application : "rails generate scaffold <i>nomdelaressource attribut:type attribut:type attribut:type</i></li>
+<li class="list-group-item">mettez à jour votre base de données : "rake db:migrate"</li>
+<li class="list-group-item">fermez puis relancez le serveur : "ctrl + C" puis "rails server"</li>
+<li class="list-group-item">raffraichissez la page web sur Google Chrome pour voir les changements</li>
+		</ul>
+	</div>
+
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Ajouter des attributs</li>
+			<li class="list-group-item">Ouvrez votre terminal
+<li class="list-group-item">Assurez-vous d’être dans c:\Sites:\nomdevotreapp
+<li class="list-group-item">Ajoutez l’attribut à votre ressource : "rails generate migration
+<i>AddAttributeToRessource attribut:type</i>"
+<li class="list-group-item">Mettez à jour votre base de données : "rake db:migrate"
+<li class="list-group-item">fermez puis relancez le serveur : "ctrl + C" puis "rails server"
+<li class="list-group-item">raffraichissez la page web sur Google Chrome pour voir les changements
+<li class="list-group-item"><small>Pour en savoir plus sur : <%= link_to "Rails Guides", "http://guides.rubyonrails.org/active_record_migrations.html" %></small></li>
+		</ul>
+	</div>
+</div>
+
+<!-- 
+
+<h3 class="page-header">
+	Quelques formules magiques pour coder
+</h3>
+
+<div class="row">
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Contenu</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Ruby on rails</h4>
+				<p class="list-group-item-text">http://installrails.org</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Design</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Ruby on rails</h4>
+				<p class="list-group-item-text">http://installrails.org</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item active">Logique</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Ruby on rails</h4>
+				<p class="list-group-item-text">http://installrails.org</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+-->
+
+
+
+
+	
+
