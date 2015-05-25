@@ -1,0 +1,100 @@
+<div class="row">
+	<div class= "col-md-8 col-md-offset-2">
+
+	
+		<h4 class="text-center"> 
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#HKNjuillet1">	   Réserver ma place 
+				<span class="badge">5</span>
+			</button>
+
+		</h4>
+		<hr>
+			
+		
+
+		
+		<div class="row">
+			<div class="col-md-8">
+				<ul class="list-group">
+					<li class="list-group-item active">Programme</li>
+					<li class="list-group-item">
+						<h4 class="list-group-item-heading">Vendredi : 19h à 21h</h4>
+						<p class="list-group-item-text">
+							Arrêter de penser à l'envers en matière de business
+						</p>
+					</li>
+
+					<li class="list-group-item">
+						<h4 class="list-group-item-heading">Samedi : 9h à 19h</h4>
+						<p class="list-group-item-text">
+							Concevoir le bon produit & 
+							<br>Créer sa première application web
+						</p>
+					</li>
+
+					<li class="list-group-item">
+						<h4 class="list-group-item-heading">Dimanche : 9h à 19h</h4>
+						<p class="list-group-item-text">
+							Construire la version de lancement de son produit &
+							<br>Vendre aux premiers clients
+						</p>
+					</li>
+				</ul>
+		
+			</div>
+			<div class="col-md-4">
+			
+				<ul class="list-group">
+					<li class="list-group-item active">Pré-requis</li>
+					<li class="list-group-item"><b>Ordinateur portable</b> avec les droits d'administration</li>
+					<li class="list-group-item">Connaissance ou compréhension de l'internet et des <b>réseaux sociaux</b> actuels</li>
+					<li class="list-group-item">
+						Compréhension de l'<b>anglais</b>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+
+<hr>	
+</div>
+
+</div>
+
+
+
+<!-- Small modal -->
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="HKNjuillet1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Réserver ma place</h4>
+      </div>
+      
+      <div class="modal-body">
+        <div class="text-justify">Voici les données du virement bancaire que vous pouvez effectuer.
+        <br>Dès réception de votre virement, votre place sera réservée.</div>
+        <hr>
+        Compte bancaire :
+        <p><b>BE10 0017 0156 4704</b></p>
+        Bénéficiaire :
+        <p><b>UPcetera SPRLS</b>
+        <br><small>bvd des Invalides 135, 1160 Auderghem</small></p>
+        Montant :
+        <p><b>150,- EUR</b></p>
+        Communication :
+        <p><b>HKN juillet I - <%= current_user.email %></b></p>
+        <hr>
+        <div class="text-center">Si vous souhaitez être pris(e) en compte plus rapidement, vous pouvez envoyer votre preuve de virement à <%= link_to "contact@hackuna.org", "mailto:contact@hackuna.org", class: "hkncolor" %></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -2,7 +2,7 @@ $navbar-height: 70px;
 $navbar-default-brand-color: #16a085;
 $navbar-default-link-color: #16a085;
 $brand-primary: #16a085;
-$brand-info: #2C3E50;
+$brand-info: #F1C40F;
 
 
 // import the CSS framework
@@ -129,8 +129,8 @@ font-size: 15em;
   padding-bottom: 30px;
   padding-left: 10px;
   color: #f8f8f8; 
-  background-image: image-url('computer_table.jpg');
-  height: 545px;
+  background-image: image-url('computer_table.jpeg');
+  min-height: 545px;
   background-align: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -159,7 +159,7 @@ font-size: 15em;
   padding-left: 10px;
   color: #f8f8f8; 
   background-image: image-url('conference_table.jpg');
-  height: 695px;
+  min-height: 695px;
   background-align: center;
   background-repeat: no-repeat;
   background-size: cover;
