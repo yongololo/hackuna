@@ -1,5 +1,11 @@
 Hackuna::Application.routes.draw do
   
+  resources :notes
+
+  resources :exercises
+
+  resources :lessons
+
   resources :subscriptions
 
   resources :my_feedbacks

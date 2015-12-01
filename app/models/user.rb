@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   						:dependent => :destroy
 
   def pro_user
-  	user.as_pro
+  	as_pro
   end
 end

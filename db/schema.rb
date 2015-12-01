@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516130740) do
+ActiveRecord::Schema.define(version: 20151201083942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,35 @@ ActiveRecord::Schema.define(version: 20150516130740) do
     t.datetime "updated_at"
   end
 
+  create_table "exercises", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "lesson_id"
+  end
+
+  create_table "lessons", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "no"
+    t.string   "video_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "my_feedbacks", force: true do |t|
     t.integer  "user_id"
     t.integer  "course_id"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notes", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "lesson_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
